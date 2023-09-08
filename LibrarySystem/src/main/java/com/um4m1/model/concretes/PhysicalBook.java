@@ -1,8 +1,8 @@
-package com.um4m1.model;
+package com.um4m1.model.concretes;
 
-import com.um4m1.library.Physical;
+import com.um4m1.model.abstracts.Entity;
 
-public class PhysicalBook implements Physical
+public class PhysicalBook implements Entity
 {
 	public int ISBN;
 	public String bookName;
@@ -60,16 +60,5 @@ public class PhysicalBook implements Physical
 	public void setStatus(int status) {
 		this.statusId = status;
 	}
-
-	@Override
-	public int getShelfNumber() {
-		return this.shelfId;
-	}
-
-	@Override
-	public int status() {
-		return this.statusId;
-	}
-	
 	
 }

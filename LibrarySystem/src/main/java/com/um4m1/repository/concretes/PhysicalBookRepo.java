@@ -1,4 +1,4 @@
-package com.um4m1.repository;
+package com.um4m1.repository.concretes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.um4m1.library.DBConstants;
-import com.um4m1.model.PhysicalBook;
+import com.um4m1.model.concretes.PhysicalBook;
+import com.um4m1.repository.abstracts.PhysicalBookDao;
 
-public class PhysicalBookRepo {
+public class PhysicalBookRepo implements PhysicalBookDao{
 
+	@Override
 	public PhysicalBook getBookByISBN(int isbn) throws SQLException
 	{
 		Connection c = DBConstants.DBConnection();
@@ -33,6 +35,7 @@ public class PhysicalBookRepo {
 		return pBook;
 	}
 
+	@Override
 	public String getNameByIsbn(int isbn) throws SQLException {
 		Connection c = DBConstants.DBConnection();
 		String sql = "select pbok.\"BOOK_NAME\" from \"PhysicalBook\" pbok where pbok.\"ISBN\" = ?";
@@ -49,6 +52,7 @@ public class PhysicalBookRepo {
 		return bookName;
 	}
 
+	@Override
 	public String getReleaseDateByIsbn(int isbn) throws SQLException {
 		Connection c = DBConstants.DBConnection();
 		String sql = "select pbok.\"RELEASE_DATE\" from \"PhysicalBook\" pbok where pbok.\"ISBN\" = ?";

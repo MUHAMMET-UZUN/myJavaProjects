@@ -1,4 +1,4 @@
-package com.um4m1.repository;
+package com.um4m1.repository.concretes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.um4m1.library.DBConstants;
+import com.um4m1.repository.abstracts.ShelfDao;
 
-public class ShelfRepo {
+public class ShelfRepo implements ShelfDao{
+	
+	@Override
 	public String getShelfById(int id) throws SQLException
 	{
 		Connection c = DBConstants.DBConnection();

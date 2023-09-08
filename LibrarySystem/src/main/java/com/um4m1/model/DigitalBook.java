@@ -1,9 +1,6 @@
-package com.um4m1.model.concretes;
+package com.um4m1.model;
 
-import com.um4m1.model.abstracts.Entity;
-
-
-public class DigitalBook implements Entity
+public class DigitalBook 
 {
 	public long id;
 	public int format;

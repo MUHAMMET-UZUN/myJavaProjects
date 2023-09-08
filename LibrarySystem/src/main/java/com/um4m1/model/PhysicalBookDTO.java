@@ -1,4 +1,6 @@
-package com.um4m1.model.concretes;
+package com.um4m1.model;
+
+import com.um4m1.library.Physical;
 
 public  class PhysicalBookDTO
 {

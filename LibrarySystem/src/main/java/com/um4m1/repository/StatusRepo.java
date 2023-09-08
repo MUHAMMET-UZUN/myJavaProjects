@@ -1,4 +1,4 @@
-package com.um4m1.repository.concretes;
+package com.um4m1.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,26 +6,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.um4m1.library.DBConstants;
-import com.um4m1.repository.abstracts.AuthorDao;
 
-public class AuthorRepo implements AuthorDao{
-
-	@Override
-	public String getAuthorById(int id) throws SQLException
+public class StatusRepo {
+	public String getStatusById(int id) throws SQLException
 	{
 		Connection c = DBConstants.DBConnection();
-		String sql = "select au.\"AUTHOR_NAME\" from \"Author\" au where au.\"AUTHOR_ID\" = ?";
+		String sql = "select st.\"STATUS\" from \"Status\" st where st.\"STATUS_ID\" = ?";
 		PreparedStatement stmt = c.prepareStatement(sql);
 		stmt.setInt(1, id);
 		ResultSet result = stmt.executeQuery();
 		
-		String author = "";
+		String status = "";		
 		while(result.next())
 		{
-			author = result.getString("AUTHOR_NAME");
+			status = result.getString("STATUS");
 		}
 		result.close();
 		c.close();
-		return author;
+		return status;
 	}
 }

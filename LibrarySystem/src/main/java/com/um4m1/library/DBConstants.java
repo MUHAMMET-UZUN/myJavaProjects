@@ -9,7 +9,7 @@ public class DBConstants
 {
 	public static final String USER = "postgres";
 
-	public static final String PASSWORD = "1234";
+	public static final String PASSWORD = " ";
 
 	public static final String URL = "jdbc:postgresql://localhost:5432/LibrarySystem";
 

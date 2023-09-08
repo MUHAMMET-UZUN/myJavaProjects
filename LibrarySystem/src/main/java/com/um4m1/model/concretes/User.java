@@ -1,4 +1,4 @@
-package com.um4m1.model;
+package com.um4m1.model.concretes;
 
 public class User {
 	private int userId;
